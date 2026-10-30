@@ -1,0 +1,14 @@
+node_modules
+.next
+.env
+.env.local
+data/*.json
+data/uploads/*
+!data/.gitkeep
+!data/uploads/.gitkeep
+coverage
+playwright-report
+test-results
+.playwright-mcp
+*.tsbuildinfo
+*.log

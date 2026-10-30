@@ -1,0 +1,28 @@
+{
+  "name": "site-modular-desentupidora",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "setup:admin": "node scripts/generate-credentials.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "3.0.3",
+    "jose": "6.2.14",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "typescript": "5.9.3",
+    "vitest": "4.0.17"
+  }
+}

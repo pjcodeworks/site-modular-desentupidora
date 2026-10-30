@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "company": {
+    "legalName": "",
+    "displayName": "Nexo Hidro",
+    "logoUrl": "",
+    "faviconUrl": "",
+    "whatsapp": "5511999999999",
+    "phone": "(11) 99999-9999",
+    "email": ""
+  },
+  "theme": {
+    "primary": "#112934",
+    "accent": "#b7cf3a",
+    "surface": "#f4f1e9",
+    "fontPreset": "modern"
+  },
+  "content": {
+    "eyebrow": "Atendimento com método e transparência",
+    "headline": "Qual é o problema?",
+    "subheadline": "Selecione o ponto do imóvel, informe sua região e fale com a equipe com o contexto já organizado.",
+    "about": "Cada instalação possui características próprias. A representação da casa é ilustrativa e ajuda a identificar o ponto do problema; a solução adequada depende de avaliação.",
+    "finalCta": "Conte o que está acontecendo"
+  },
+  "services": [
+    {
+      "id": "sink",
+      "enabled": true,
+      "name": "Pia",
+      "description": "Água descendo devagar ou pia entupida? Descreva o que está acontecendo para a equipe avaliar.",
+      "whatsappMessage": "Estou com um problema de entupimento na pia."
+    },
+    {
+      "id": "toilet",
+      "enabled": true,
+      "name": "Vaso sanitário",
+      "description": "Retorno de água, escoamento lento ou obstrução no vaso sanitário.",
+      "whatsappMessage": "Estou com um problema no vaso sanitário."
+    },
+    {
+      "id": "drain",
+      "enabled": true,
+      "name": "Ralo",
+      "description": "Água acumulada, escoamento lento ou retorno em ralos internos e externos.",
+      "whatsappMessage": "Estou com um problema de entupimento no ralo."
+    },
+    {
+      "id": "sewer",
+      "enabled": true,
+      "name": "Rede de esgoto",
+      "description": "Sinais de obstrução em diferentes pontos podem exigir avaliação da rede principal.",
+      "whatsappMessage": "Estou com sinais de obstrução na rede de esgoto."
+    },
+    {
+      "id": "hydrojet",
+      "enabled": true,
+      "name": "Hidrojateamento",
+      "description": "Limpeza técnica com água sob pressão, indicada após avaliação das condições da tubulação.",
+      "whatsappMessage": "Gostaria de solicitar uma avaliação para hidrojateamento."
+    },
+    {
+      "id": "camera",
+      "enabled": true,
+      "name": "Vídeo inspeção",
+      "description": "Inspeção visual para auxiliar na localização e documentação de problemas internos.",
+      "whatsappMessage": "Gostaria de saber se a vídeo inspeção é indicada para o meu caso."
+    },
+    {
+      "id": "pipes",
+      "enabled": true,
+      "name": "Limpeza de tubulações",
+      "description": "Avaliação e limpeza de tubulações conforme o tipo de uso e a condição encontrada.",
+      "whatsappMessage": "Gostaria de solicitar uma avaliação para limpeza de tubulações."
+    },
+    {
+      "id": "external",
+      "enabled": false,
+      "name": "Redes externas",
+      "description": "Atendimento de redes externas sujeito à avaliação da estrutura e do acesso.",
+      "whatsappMessage": "Gostaria de solicitar uma avaliação para uma rede externa."
+    }
+  ],
+  "regions": [
+    {
+      "id": "regiao-central",
+      "name": "Região Central",
+      "aliases": [
+        "centro"
+      ]
+    },
+    {
+      "id": "zona-norte",
+      "name": "Zona Norte",
+      "aliases": []
+    }
+  ],
+  "media": {
+    "heroUrl": "",
+    "socialImageUrl": ""
+  },
+  "seo": {
+    "title": "Nexo Hidro | Atendimento para entupimentos",
+    "description": "Identifique o ponto do problema, confirme a região atendida e fale com a equipe pelo WhatsApp.",
+    "canonicalUrl": ""
+  },
+  "updatedAt": "2026-10-30T03:03:55.357Z"
+}
