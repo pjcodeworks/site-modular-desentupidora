@@ -3,17 +3,26 @@
 import { randomUUID } from 'node:crypto';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { createSession, deleteSession, requireSession, verifyCredentials } from '@/lib/auth';
+import { clearLoginFailures, isLoginBlocked, registerLoginFailure } from '@/lib/login-rate-limit';
 import { getDraftConfig, importDraftConfig, publishDraftConfig, restorePreviousConfig, saveDraftConfig } from '@/lib/config-store';
 import { serviceIds, siteConfigSchema, type ServiceId, type SiteConfig } from '@/lib/config-schema';
 import { slugify } from '@/lib/site-utils';
 
 export async function loginAction(_state: { error: string }, formData: FormData) {
+  const forwarded = (await headers()).get('x-forwarded-for');
+  const clientKey = forwarded?.split(',')[0]?.trim() || 'local';
+  if (isLoginBlocked(clientKey)) return { error: 'Muitas tentativas. Aguarde alguns minutos e tente novamente.' };
   const email = String(formData.get('email') ?? '');
   const password = String(formData.get('password') ?? '');
-  if (!(await verifyCredentials(email, password))) return { error: 'Credenciais inválidas.' };
+  if (!(await verifyCredentials(email, password))) {
+    registerLoginFailure(clientKey);
+    return { error: 'Credenciais inválidas.' };
+  }
+  clearLoginFailures(clientKey);
   await createSession(email);
   redirect('/admin');
 }

@@ -18,7 +18,10 @@ export async function verifyCredentials(email: string, password: string) {
   const passwordHash = process.env.ADMIN_PASSWORD_HASH;
   if (!expectedEmail || !passwordHash) return false;
   const emailMatches = email.trim().toLowerCase() === expectedEmail.trim().toLowerCase();
-  return emailMatches && (await bcrypt.compare(password, passwordHash));
+  // Compara sempre o hash real, mesmo com e-mail errado: sem o short-circuit os dois casos
+  // levam o mesmo tempo e o endpoint nao denuncia qual e o e-mail do admin.
+  const passwordMatches = await bcrypt.compare(password, passwordHash);
+  return emailMatches && passwordMatches;
 }
 
 export async function createSession(email: string) {
